@@ -15,4 +15,9 @@ class ListRouter {
         let add = AddBuilder().main()        
         view?.navigationController?.pushViewController(add, animated: true)
     }
+    
+    func gotoDetailPage(contact: Contact) {
+        let detail = DetailBuilder().main(contact: contact)
+        view?.navigationController?.pushViewController(detail, animated: true)
+    }
 }

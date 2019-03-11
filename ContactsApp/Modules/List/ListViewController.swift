@@ -37,7 +37,7 @@ class ListViewController: UIViewController {
     
     @objc
     func addPressed() {
-        presenter?.addContact()
+        presenter?.addHandler()
     }
 }
 
@@ -53,6 +53,6 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        presenter?.selectContactHandler(index: indexPath.row)
     }
 }

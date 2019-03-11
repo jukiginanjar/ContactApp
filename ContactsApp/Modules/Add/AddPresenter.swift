@@ -24,7 +24,7 @@ class AddPresenter {
         }
     }
     
-    func cancelSave() {
+    func cancelHandler() {
         router?.backToList()
     }
 }

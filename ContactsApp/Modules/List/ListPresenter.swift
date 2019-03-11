@@ -18,7 +18,14 @@ class ListPresenter {
         return interactor?.getContacts().map({ "\($0.firstName) \($0.lastName)" }) ?? []
     }
     
-    func addContact() {
+    func addHandler() {
         router?.gotoAddPage()
+    }
+    
+    func selectContactHandler(index: Int) {
+        guard let contact = interactor?.getContacts()[index] else {
+            return
+        }
+        router?.gotoDetailPage(contact: contact)
     }
 }

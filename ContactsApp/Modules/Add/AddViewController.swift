@@ -28,6 +28,6 @@ class AddViewController: UIViewController {
     
     @IBAction
     func cancelPressed() {
-        presenter?.cancelSave()
+        presenter?.cancelHandler()
     }
 }

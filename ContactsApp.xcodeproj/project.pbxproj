@@ -28,6 +28,12 @@
 		E5113EE722361E6D0081952E /* AddRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5113EE622361E6D0081952E /* AddRouter.swift */; };
 		E5113EE922361E760081952E /* AddBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5113EE822361E760081952E /* AddBuilder.swift */; };
 		E5113EEB22361EFF0081952E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5113EEA22361EFF0081952E /* Constants.swift */; };
+		E5F8BF302236534900327E67 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F8BF2E2236534900327E67 /* DetailViewController.swift */; };
+		E5F8BF312236534900327E67 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5F8BF2F2236534900327E67 /* DetailViewController.xib */; };
+		E5F8BF332236535A00327E67 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F8BF322236535A00327E67 /* DetailInteractor.swift */; };
+		E5F8BF352236536300327E67 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F8BF342236536300327E67 /* DetailPresenter.swift */; };
+		E5F8BF372236536B00327E67 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F8BF362236536B00327E67 /* DetailRouter.swift */; };
+		E5F8BF392236537300327E67 /* DetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F8BF382236537300327E67 /* DetailBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +81,12 @@
 		E5113EE622361E6D0081952E /* AddRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRouter.swift; sourceTree = "<group>"; };
 		E5113EE822361E760081952E /* AddBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBuilder.swift; sourceTree = "<group>"; };
 		E5113EEA22361EFF0081952E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E5F8BF2E2236534900327E67 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		E5F8BF2F2236534900327E67 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		E5F8BF322236535A00327E67 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
+		E5F8BF342236536300327E67 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		E5F8BF362236536B00327E67 /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
+		E5F8BF382236537300327E67 /* DetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +204,12 @@
 		E5113ECE223614BE0081952E /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				E5F8BF2E2236534900327E67 /* DetailViewController.swift */,
+				E5F8BF2F2236534900327E67 /* DetailViewController.xib */,
+				E5F8BF322236535A00327E67 /* DetailInteractor.swift */,
+				E5F8BF362236536B00327E67 /* DetailRouter.swift */,
+				E5F8BF342236536300327E67 /* DetailPresenter.swift */,
+				E5F8BF382236537300327E67 /* DetailBuilder.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -320,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5113EA82236148B0081952E /* LaunchScreen.storyboard in Resources */,
+				E5F8BF312236534900327E67 /* DetailViewController.xib in Resources */,
 				E5113EA52236148B0081952E /* Assets.xcassets in Resources */,
 				E5113EE122361D800081952E /* AddViewController.xib in Resources */,
 				E5113ED2223615050081952E /* ListViewController.xib in Resources */,
@@ -360,8 +379,13 @@
 				E5113EE722361E6D0081952E /* AddRouter.swift in Sources */,
 				E5113EE522361E620081952E /* AddPresenter.swift in Sources */,
 				E5113EEB22361EFF0081952E /* Constants.swift in Sources */,
+				E5F8BF302236534900327E67 /* DetailViewController.swift in Sources */,
+				E5F8BF392236537300327E67 /* DetailBuilder.swift in Sources */,
 				E5113EDB223615880081952E /* Contact.swift in Sources */,
 				E5113EDD22361C0B0081952E /* ListBuilder.swift in Sources */,
+				E5F8BF372236536B00327E67 /* DetailRouter.swift in Sources */,
+				E5F8BF332236535A00327E67 /* DetailInteractor.swift in Sources */,
+				E5F8BF352236536300327E67 /* DetailPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

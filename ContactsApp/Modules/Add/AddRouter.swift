@@ -9,9 +9,7 @@
 import UIKit
 
 class AddRouter {
-    weak var view: UIViewController?
-    
-    func backToList() {
+    func backToList(view: AddViewController?) {
         view?.navigationController?.popViewController(animated: true)
     }
 }

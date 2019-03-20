@@ -15,7 +15,7 @@ class ListBuilder {
         let presenter = ListPresenter(router: router, interactor: interactor)
         let view = ListViewController(presenter: presenter)
         
-        router.view = view
+        presenter.view = view
         
         return UINavigationController(rootViewController: view)
     }

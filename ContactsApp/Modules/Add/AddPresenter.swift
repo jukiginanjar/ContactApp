@@ -9,8 +9,15 @@
 import Foundation
 
 class AddPresenter {
-    var router: AddRouter?
-    var interactor: AddInteractor?
+    weak var view: AddViewController?
+    
+    private let router: AddRouter
+    private let interactor: AddInteractor
+    
+    init(router: AddRouter, interactor: AddInteractor) {
+        self.router = router
+        self.interactor = interactor
+    }
     
     func save(firstName: String, lastName: String, phone: String) {
         let dict = [
@@ -19,12 +26,12 @@ class AddPresenter {
             "phone": phone
         ]
         if let contact = Contact(dictionary: dict) {
-            interactor?.saveContact(contact)
-            router?.backToList()
+            interactor.saveContact(contact)
+            router.backToList(view: view)
         }
     }
     
     func cancelHandler() {
-        router?.backToList()
+        router.backToList(view: view)
     }
 }

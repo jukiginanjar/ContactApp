@@ -9,7 +9,7 @@
 import Foundation
 
 class ListPresenter {
-    weak var controller: ListViewController?
+    weak var view: ListViewController?
     
     private let interactor: ListInteractor
     private let router: ListRouter
@@ -24,11 +24,11 @@ class ListPresenter {
     }
     
     func addHandler() {
-        router.gotoAddPage()
+        router.gotoAddPage(view: view)
     }
     
     func selectContactHandler(index: Int) {
         let contact = interactor.getContacts()[index]
-        router.gotoDetailPage(contact: contact)
+        router.gotoDetailPage(view: view, contact: contact)
     }
 }

@@ -10,15 +10,12 @@ import Foundation
 
 class AddBuilder {
     func main() -> AddViewController {
-        let presenter = AddPresenter()        
+        let router = AddRouter()
+        let interactor = AddInteractor()
+        let presenter = AddPresenter(router: router, interactor: interactor)
         let view = AddViewController(presenter: presenter)
         
-        let router = AddRouter()
-        router.view = view
-        presenter.router = router
-        
-        let interactor = AddInteractor()
-        presenter.interactor = interactor
+        presenter.view = view
 
         return view
     }

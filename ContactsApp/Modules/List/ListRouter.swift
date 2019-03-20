@@ -7,16 +7,23 @@
 //
 
 import Foundation
+import Swinject
 
 class ListRouter {
-    weak var view: ListViewController?
+    private let container = Container.shared
     
-    func gotoAddPage() {
-        let add = AddBuilder().main()        
+    func gotoAddPage(view: ListViewController?) {
+//        guard let add = container.resolve(AddViewController.self) else {
+//            return
+//        }
+        let add = AddBuilder().main()
         view?.navigationController?.pushViewController(add, animated: true)
     }
     
-    func gotoDetailPage(contact: Contact) {
+    func gotoDetailPage(view: ListViewController?, contact: Contact) {
+//        guard let detail = container.resolve(DetailViewController.self, argument: contact) else {
+//            return
+//        }
         let detail = DetailBuilder().main(contact: contact)
         view?.navigationController?.pushViewController(detail, animated: true)
     }

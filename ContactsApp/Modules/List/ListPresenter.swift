@@ -11,21 +11,24 @@ import Foundation
 class ListPresenter {
     weak var controller: ListViewController?
     
-    var interactor: ListInteractor?
-    var router: ListRouter?
+    private let interactor: ListInteractor
+    private let router: ListRouter
+    
+    init(router: ListRouter, interactor: ListInteractor) {
+        self.interactor = interactor
+        self.router = router
+    }
     
     func getFullNames() -> [String] {
-        return interactor?.getContacts().map({ "\($0.firstName) \($0.lastName)" }) ?? []
+        return interactor.getContacts().map({ "\($0.firstName) \($0.lastName)" })
     }
     
     func addHandler() {
-        router?.gotoAddPage()
+        router.gotoAddPage()
     }
     
     func selectContactHandler(index: Int) {
-        guard let contact = interactor?.getContacts()[index] else {
-            return
-        }
-        router?.gotoDetailPage(contact: contact)
+        let contact = interactor.getContacts()[index]
+        router.gotoDetailPage(contact: contact)
     }
 }

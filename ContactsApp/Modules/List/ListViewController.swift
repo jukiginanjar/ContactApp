@@ -9,14 +9,23 @@
 import UIKit
 
 class ListViewController: UIViewController {
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private var tableView: UITableView!
     
-    var presenter: ListPresenter?
-    
-    var names = [String]() {
+    private var names = [String]() {
         didSet {
             tableView.reloadData()
         }
+    }
+    
+    private let presenter: ListPresenter
+    
+    init(presenter: ListPresenter) {
+        self.presenter = presenter
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
@@ -30,14 +39,13 @@ class ListViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        names = presenter?.getFullNames() ?? []
+        super.viewWillAppear(animated)        
+        names = presenter.getFullNames()
     }
     
     @objc
     func addPressed() {
-        presenter?.addHandler()
+        presenter.addHandler()
     }
 }
 
@@ -53,6 +61,6 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter?.selectContactHandler(index: indexPath.row)
+        presenter.selectContactHandler(index: indexPath.row)
     }
 }

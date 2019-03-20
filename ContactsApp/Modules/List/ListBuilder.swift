@@ -10,18 +10,12 @@ import UIKit
 
 class ListBuilder {
     func main() -> UIViewController {
-        let interactor = ListInteractor()
-        let presenter = ListPresenter()
-        
-        
-        let view = ListViewController()
-        view.presenter = presenter
-        
         let router = ListRouter()
-        router.view = view
+        let interactor = ListInteractor()
+        let presenter = ListPresenter(router: router, interactor: interactor)
+        let view = ListViewController(presenter: presenter)
         
-        presenter.interactor = interactor
-        presenter.router = router
+        router.view = view
         
         return UINavigationController(rootViewController: view)
     }

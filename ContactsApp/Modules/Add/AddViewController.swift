@@ -9,9 +9,9 @@
 import UIKit
 
 class AddViewController: UIViewController {
-    @IBOutlet weak var firstNameTF: UITextField!
-    @IBOutlet weak var lastNameTF: UITextField!
-    @IBOutlet weak var phoneTF: UITextField!
+    @IBOutlet private var firstNameTF: UITextField!
+    @IBOutlet private var lastNameTF: UITextField!
+    @IBOutlet private var phoneTF: UITextField!
     
     private let presenter: AddPresenter
     

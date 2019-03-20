@@ -10,12 +10,8 @@ import UIKit
 
 class DetailBuilder {
     func main(contact: Contact) -> UIViewController {
-        let presenter = DetailPresenter()
-        presenter.contact = contact
-        
-        let view = DetailViewController()
-        view.presenter = presenter
-
+        let presenter = DetailPresenter(contact: contact)
+        let view = DetailViewController(presenter: presenter)
         return view
     }
 }

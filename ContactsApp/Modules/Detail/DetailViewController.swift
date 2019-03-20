@@ -9,15 +9,24 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-    var presenter: DetailPresenter?
+    @IBOutlet private var nameLabel: UILabel!
+    @IBOutlet private var phoneLabel: UILabel!
     
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var phoneLabel: UILabel!
+    private let presenter: DetailPresenter
+    
+    init(presenter: DetailPresenter) {
+        self.presenter = presenter
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        nameLabel.text = presenter?.name
-        phoneLabel.text = presenter?.phone
+        nameLabel.text = presenter.name
+        phoneLabel.text = presenter.phone
     }
 }

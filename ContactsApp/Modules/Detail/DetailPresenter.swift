@@ -9,19 +9,17 @@
 import Foundation
 
 class DetailPresenter {
-    var contact: Contact?
+    private let contact: Contact
+    
+    init(contact: Contact) {
+        self.contact = contact
+    }
     
     var name: String? {
-        guard let contact = contact else {
-            return nil
-        }
         return "Name: \(contact.firstName) \(contact.lastName)"
     }
     
     var phone: String? {
-        guard let contact = contact else {
-            return nil
-        }
         return "Phone: \(contact.phone)"
     }
 }
